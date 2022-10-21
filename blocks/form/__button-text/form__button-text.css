@@ -1,0 +1,18 @@
+.form__button-text{
+    margin: 14px auto 18px;
+    font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 767px) {
+    .form__button-text{
+        margin: 14px auto;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

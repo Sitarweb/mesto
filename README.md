@@ -1,5 +1,5 @@
 # Проект 4: Mesto
-__Опубликован по адресу:__ https://sitarweb.github.io/russian-travel
+__Опубликован по адресу:__
 
 __Репозиторий:__ https://github.com/Sitarweb/russian-travel
 #### Описание

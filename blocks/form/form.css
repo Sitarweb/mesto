@@ -1,10 +1,13 @@
 .form{
     margin: 54px 0 0;
-    width: 100%;
+    width: 358px;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 767px) {
     .form{
+        width: 238px;
         margin: 75px 0 0;
     }
 }

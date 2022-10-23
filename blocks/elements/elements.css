@@ -1,7 +1,7 @@
 .elements{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-    gap: 17px;
+    gap: 19px 17px;
     max-width: 880px;
     padding: 51px 0 0;
     margin: 0 auto;
@@ -9,7 +9,7 @@
 
 @media screen and (max-width: 767px) {
     .elements{
-        padding: 35px 19px 0;
+        padding: 36px 19px 0;
         gap: 20px;
     }
 }

@@ -4,7 +4,7 @@
     position: absolute;
     right: -32px;
     top: -32px;
-    background-image: url(../../../images/form__close-button.png);
+    background-image: url(../../../images/popup__button-close.svg);
     background-color: #000000;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -17,6 +17,8 @@
     .popup__button-close{
         right: 0;
         top: -40px;
+        width: 20px;
+        height: 20px;
     }
 }
 

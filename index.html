@@ -1,101 +1,101 @@
 <!DOCTYPE html>
-<html lang="Ru">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Simon Tarasenko">
     <link rel="stylesheet" href="pages/index.css">
-    <title>mesto</title>
+    <title>Место</title>
 </head>
 <body class="page">
     
     <header class="header">
-        <img src="images/header__logo.png" alt="Место" class="header__logo">
-        <hr class="header__line">
+        <img src="images/header__logo.svg" alt="Место" class="header__logo">
     </header>
     
     <main class="content">
         
         <section class="profile">
             <div class="profile__content">
-                <img src="images/profile__avatar.jpg" alt="Ваше фото" class="profile__avatar">
+                <img src="images/profile__avatar.svg" alt="Ваше фото" class="profile__avatar">
                 <div class="profile__info">
                     <h1 class="profile__info-title">Жак-Ив Кусто</h1>
-                    <div class="profile__edit-button"></div>
+                    <button class="profile__edit-button"></button>
                     <p class="profile__info-paragraph">Исследователь океана</p>
                 </div>
             </div>
-            <div class="profile__add-button "></div>
+            <button class="profile__add-button "></button>
         </section>
 
         <section class="elements">
-            <div class="elements__card">
-                <img src="images/Karachayevsk.png" alt="Карачаевск" class="elements__image">
+            <article class="elements__card">
+                <img src="images/Karachayevsk.jpg" alt="Карачаевск" class="elements__image">
                 <div class="elements__text">
                     <h3 class="elements__title">Карачаевск</h3>
-                    <div class="elements__heart-button"></div>
+                    <button class="elements__heart-button elements__heart-button_active"></button>
                 </div>
-            </div>
+            </article>
             
-            <div class="elements__card">
+            <article class="elements__card">
                 <img src="images/Elbrus.jpg" alt="Гора Эльбрус" class="elements__image">
                 <div class="elements__text">
                     <h3 class="elements__title">Гора Эльбрус</h3>
-                    <div class="elements__heart-button"></div>
+                    <button class="elements__heart-button elements__heart-button_active"></button>
                 </div>
-            </div>
+            </article>
 
-            <div class="elements__card">
-                <img src="images/Dombay.png" alt="Домбай" class="elements__image">
+            <article class="elements__card">
+                <img src="images/Dombay.jpg" alt="Домбай" class="elements__image">
                 <div class="elements__text">
                     <h3 class="elements__title">Домбай</h3>
-                    <div class="elements__heart-button"></div>
+                    <button class="elements__heart-button elements__heart-button_active"></button>
                 </div>
-            </div>
+            </article>
 
-            <div class="elements__card">
+            <article class="elements__card">
                 <img src="images/Elbrus.jpg" alt="Гора Эльбрус" class="elements__image">
                 <div class="elements__text">
                     <h3 class="elements__title">Гора Эльбрус</h3>
-                    <div class="elements__heart-button"></div>
+                    <button class="elements__heart-button elements__heart-button_active"></button>
                 </div>
-            </div>
+            </article>
 
-            <div class="elements__card">
-                <img src="images/Dombay.png" alt="Домбай" class="elements__image">
+            <article class="elements__card">
+                <img src="images/Dombay.jpg" alt="Домбай" class="elements__image">
                 <div class="elements__text">
                     <h3 class="elements__title">Домбай</h3>
-                    <div class="elements__heart-button"></div>
+                    <button class="elements__heart-button elements__heart-button_active"></button>
                 </div>
-            </div>
+            </article>
 
-            <div class="elements__card">
-                <img src="images/Karachayevsk.png" alt="Карачаево-Черкессия" class="elements__image">
+            <article class="elements__card">
+                <img src="images/Karachayevsk.jpg" alt="Карачаево-Черкессия" class="elements__image">
                 <div class="elements__text">
                     <h3 class="elements__title">Карачаево-Черкессия</h3>
-                    <div class="elements__heart-button"></div>
+                    <button class="elements__heart-button elements__heart-button_active"></button>
                 </div>
-            </div>
+            </article>
         
         </section>
 
-        <footer class="footer">
-            <p class="footer__signature">&copy; 2022 Mesto Russia</p>
-        </footer>
-
-        <section class="popup">
-            <div class="popup__content">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="form">
-                    <input type="text" class="form__input-name" placeholder="Имя профиля" value="Жак-Ив Кусто" autocomplete="off" required>
-                    <input type="text" class="form__input-job" placeholder="Описание профиля" value="Исследователь океана" autocomplete="off" required>
-                    <button class="form__button-save" type="submit">Сохранить</button>
-                </form>
-                <button class="popup__button-close" type="submit"></button>
-            </div>
-        </section>
-
     </main>
+
+    <footer class="footer">
+        <p class="footer__signature">&copy; 2022 Mesto Russia</p>
+    </footer>
+
+    <section class="popup">
+        <div class="popup__content">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="form" name="info">
+                <input name="form__input-name" type="text" class="form__input-name" placeholder="Имя профиля" value="Жак-Ив Кусто" autocomplete="off" required>
+                <input name="form__input-job" type="text" class="form__input-job" placeholder="Описание профиля" value="Исследователь океана" autocomplete="off" required>
+                <button class="form__button-save" type="submit">Сохранить</button>
+            </form>
+            <button class="popup__button-close" type="button"></button>
+        </div>
+    </section>
+
     <script src="./scripts/index.js"></script>
 </body>
 </html>

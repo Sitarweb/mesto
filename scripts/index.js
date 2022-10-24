@@ -22,6 +22,8 @@ popupContent.addEventListener('submit', formSubmit);
 
 openButton.addEventListener('click', function (){
     popup.classList.add('popup_is-opened');
+    inputValuesName.value = profileName.textContent;
+    inputValuesJob.value = profileParagraph.textContent;
 });
 
 function closeForm(){

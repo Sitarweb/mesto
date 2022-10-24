@@ -1,7 +1,7 @@
 .form__input{
     width: 100%;
-    margin: 0 0 30px;
-    padding-bottom: 13px;
+    margin: 0;
+    padding-bottom: 8px;
     border: none;
     border-bottom: 1px solid rgba(84, 84, 84, 0.2);
     font-style: normal;
@@ -9,8 +9,4 @@
     font-size: 14px;
     line-height: 17px;
     color: #000000;
-}
-
-.form__input:last-child{
-    margin: 0;
 }

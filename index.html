@@ -8,13 +8,13 @@
     <title>Место</title>
 </head>
 <body class="page">
-    
+    <!-- Шапка -->
     <header class="header">
         <img src="images/header__logo.svg" alt="Место" class="header__logo">
     </header>
-    
+    <!-- Основной контент -->
     <main class="content">
-        
+        <!-- Информация профиля, кнопка редатирования профиля и добавления карточки -->
         <section class="profile">
             <div class="profile__content">
                 <img src="images/profile__avatar.svg" alt="Ваше фото" class="profile__avatar">
@@ -26,94 +26,42 @@
             </div>
             <button class="profile__add-button"  type="button"></button>
         </section>
-
+        <!-- Карточки -->
         <section class="elements">
-            <article class="elements__card">
-                <img src="images/Baikal.jpg" alt="Байкал" class="elements__image">
-                <img class="elements__urn" alt="Урна" src="images/urn.svg">
-                <div class="elements__text">
-                    <h3 class="elements__title">Байкал</h3>
-                    <button class="elements__heart-button" type="button"></button>
-                </div>
-            </article>
-            
-            <article class="elements__card">
-                <img src="images/Elbrus.jpg" alt="Гора Эльбрус" class="elements__image">
-                <img class="elements__urn" alt="Урна" src="images/urn.svg">
-                <div class="elements__text">
-                    <h3 class="elements__title">Гора Эльбрус</h3>
-                    <button class="elements__heart-button" type="button"></button>
-                </div>
-            </article>
-
-            <article class="elements__card">
-                <img src="images/sea.jpg" alt="Чёрное море" class="elements__image">
-                <img class="elements__urn" alt="Урна" src="images/urn.svg">
-                <div class="elements__text">
-                    <h3 class="elements__title">Чёрное море</h3>
-                    <button class="elements__heart-button" type="button"></button>
-                </div>
-            </article>
-
-            <article class="elements__card">
-                <img src="images/Mount Monk.jpg" alt="Гора Монах" class="elements__image">
-                <img class="elements__urn" alt="Урна" src="images/urn.svg">
-                <div class="elements__text">
-                    <h3 class="elements__title">Гора Монах</h3>
-                    <button class="elements__heart-button" type="button"></button>
-                </div>
-            </article>
-
-            <article class="elements__card">
-                <img src="images/Dombay.jpg" alt="Домбай" class="elements__image">
-                <img class="elements__urn" alt="Урна" src="images/urn.svg">
-                <div class="elements__text">
-                    <h3 class="elements__title">Домбай</h3>
-                    <button class="elements__heart-button" type="button"></button>
-                </div>
-            </article>
-
-            <article class="elements__card">
-                <img src="images/Karachayevsk.jpg" alt="Карачаево-Черкессия" class="elements__image">
-                <img class="elements__urn" alt="Урна" src="images/urn.svg">
-                <div class="elements__text">
-                    <h3 class="elements__title">Карачаево-Черкессия</h3>
-                    <button class="elements__heart-button" type="button"></button>
-                </div>
-            </article>
-        
+            <!-- Отрисовываются через js -->
         </section>
 
     </main>
-
+    <!-- Подвал -->
     <footer class="footer">
         <p class="footer__signature">&copy; 2022 Mesto Russia</p>
     </footer>
 
+    <!-- Попап редактирования профиля -->
     <section class="popup popup_info">
         <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="form" name="info">
-                <input name="form__input-name" type="text" class="form__input form__input_mean_name" placeholder="Имя профиля" value="Жак-Ив Кусто" autocomplete="off" required>
-                <input name="form__input-job" type="text" class="form__input form__input_mean_job" placeholder="Описание профиля" value="Исследователь океана" autocomplete="off" required>
+            <form class="form" name="profile-form">
+                <input name="profile-form-nickname" type="text" class="form__input form__input_mean_name" placeholder="Имя профиля" value="Жак-Ив Кусто" autocomplete="off" required>
+                <input name="profile-form-job" type="text" class="form__input form__input_mean_job" placeholder="Описание профиля" value="Исследователь океана" autocomplete="off" required>
                 <button class="form__button-save" type="submit">Сохранить</button>
             </form>
             <button class="popup__button-close" type="button"></button>
         </div>
     </section>
-
+    <!-- Попап добавления карточки -->
     <section class="popup popup_card">
         <div class="popup__content">
             <h2 class="popup__title">Новое место</h2>
-            <form class="form" name="info">
-                <input name="form__input-title" type="text" class="form__input form__input_card_title" placeholder="Название"  autocomplete="off" required>
-                <input name="form__input-link" type="text" class="form__input form__input_card_link" placeholder="Ссылка на картинку" autocomplete="off" required>
+            <form class="form" name="card-form">
+                <input name="card-form-title" type="text" class="form__input form__input_card_title" placeholder="Название"  autocomplete="off" required>
+                <input name="card-form-link" type="text" class="form__input form__input_card_link" placeholder="Ссылка на картинку" autocomplete="off" required>
                 <button class="form__button-save" type="submit">Создать</button>
             </form>
             <button class="popup__button-close" type="button"></button>
         </div>
     </section>
-
+    <!-- Попап открытия картинки -->
     <section class="popup popup_images">
         <div class="popup__content-image">
             <figure class="popup__figure">
@@ -123,7 +71,7 @@
             <button class="popup__button-close" type="button"></button>
         </div>
     </section>
-
+    <!-- Шаблон по которому создаются карточки -->
     <template id="elements-template">
         <article class="elements__card">
             <img src="#" alt="" class="elements__image">

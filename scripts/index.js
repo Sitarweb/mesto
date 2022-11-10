@@ -38,13 +38,13 @@ profileOpenButton.addEventListener('click', () => {
     profileFormJob.value = profileJob.textContent;
 });
 
-function SavingProfileForm (evt){
+function saveProfileForm (evt){
     evt.preventDefault();
     profileName.textContent = profileFormName.value;
     profileJob.textContent = profileFormJob.value;
     closePopup(profilePopup);
 }
-profileEditing.addEventListener('submit', SavingProfileForm);
+profileEditing.addEventListener('submit', saveProfileForm);
 
 /** Cards popup / Попап добавления карточки **/
 
@@ -106,6 +106,7 @@ function creatingCard (cardInfo) {
     cardImage.addEventListener('click', (evt) =>{
         openPopup(imagePopup);
         popupElementImage.src = evt.target.src;
+        popupElementImage.alt = evt.target.alt;
         popupElementsubtitle.textContent = cardTitle.textContent;
     });
 
@@ -114,18 +115,17 @@ function creatingCard (cardInfo) {
 
 initialCards.forEach((item) => cardsConteiner.prepend(creatingCard(item)));
 
-function cardAdd (evt){
+function handleCardFormSubmit (evt){
     evt.preventDefault();
     
     const cardValue = {name: cardFormName.value, link: cardFormLink.value};
     cardsConteiner.prepend(creatingCard(cardValue));
 
-    cardFormName.value = '';
-    cardFormLink.value = '';
+    evt.target.reset();
 
     closePopup(cardPopup);
 }
-cardCreate.addEventListener('submit', cardAdd);
+cardCreate.addEventListener('submit', handleCardFormSubmit);
 
 
 /** Image popup / Попап увеличения картинки в карточке **/

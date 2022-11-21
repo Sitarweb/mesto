@@ -1,22 +1,24 @@
-/** функции открытия и закрытия попапа **/
+/** функции открытия и закрытия попапа, еще тут закрытие по esc **/
 
 function openPopup (popup){
     popup.classList.add('popup_is-opened');
+    document.addEventListener('keydown', closePopupEsc);
+    hideInput();
 }
 
 function closePopup (popup){
     popup.classList.remove('popup_is-opened');
+    document.removeEventListener('keydown', closePopupEsc);
 }
 
-/** Наведение слушателей на закрывающую кнопку попапа **/
+/** Наведение слушателей на закрывающую кнопку попапа и по оверлею **/
 
 const closeButton = document.querySelectorAll('.popup__button-close');
 
 closeButton.forEach((button) =>{
-    
     const popup = button.closest('.popup');
-
     button.addEventListener('click', () => closePopup(popup));
+    popup.addEventListener('click', closePopupByOverlay);
 });
 
 /** Profile popup / Попап редактирования профиля **/
@@ -135,3 +137,33 @@ const imagePopup = document.querySelector('.popup_images');
 const popupElementImage = imagePopup.querySelector('.popup__image');
 const popupElementsubtitle = imagePopup.querySelector('.popup__subtitle');
 
+/** Закрытие попапа по esc**/
+
+function closePopupEsc(evt){
+    if (evt.key === 'Escape') {
+        const popup = document.querySelector('.popup_is-opened');
+        closePopup(popup);
+    }
+}
+
+/** Закрытие попапа по оверлею**/
+
+function closePopupByOverlay(evt) {
+    if (evt.target === evt.currentTarget) {
+      const popup = document.querySelector('.popup_is-opened');
+      closePopup(popup);
+    }
+  }
+
+  /** Функция отчиски попапа профиля от ошибок при открытии **/
+
+  function hideInput (){
+    const formError = document.querySelector('#form-error');
+    const inputList = Array.from(formError.querySelectorAll('.form__input'));
+    inputList.forEach((inputElement) => {
+        inputElement.classList.remove('form__input_type_error');
+        const errorElement = document.querySelector(`.${inputElement.id}-error`);
+        errorElement.classList.remove('.form__input-error_visible');
+        errorElement.textContent = '';
+    })
+  }

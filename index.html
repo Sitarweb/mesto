@@ -41,9 +41,11 @@
     <section class="popup popup_info">
         <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="form" name="profile-form">
-                <input name="profile-form-nickname" type="text" class="form__input form__input_mean_name" placeholder="Имя профиля" value="Жак-Ив Кусто" autocomplete="off" required>
-                <input name="profile-form-job" type="text" class="form__input form__input_mean_job" placeholder="Описание профиля" value="Исследователь океана" autocomplete="off" required>
+            <form class="form" id="form-error" name="profile-form" novalidate>
+                <input name="profile-form-nickname" type="text" id="name-input" class="form__input form__input_mean_name" placeholder="Имя профиля" value="Жак-Ив Кусто" autocomplete="off" minlength="2" maxlength="40" required>
+                <span class="form__input-error name-input-error"></span>
+                <input name="profile-form-job" type="text" id="job-input" class="form__input form__input_mean_job" placeholder="Описание профиля" value="Исследователь океана" autocomplete="off" minlength="2" maxlength="200" required>
+                <span class="form__input-error job-input-error"></span>
                 <button class="form__button-save" type="submit">Сохранить</button>
             </form>
             <button class="popup__button-close" type="button"></button>
@@ -53,9 +55,11 @@
     <section class="popup popup_card">
         <div class="popup__content">
             <h2 class="popup__title">Новое место</h2>
-            <form class="form" name="card-form">
-                <input name="card-form-title" type="text" class="form__input form__input_card_title" placeholder="Название"  autocomplete="off" required>
-                <input name="card-form-link" type="text" class="form__input form__input_card_link" placeholder="Ссылка на картинку" autocomplete="off" required>
+            <form class="form"  name="card-form" novalidate>
+                <input name="card-form-title" type="text" id="mesto-input" class="form__input form__input_card_title" placeholder="Название"  autocomplete="off" minlength="2" maxlength="30"  required>
+                <span class="form__input-error mesto-input-error"></span>
+                <input name="card-form-link" type="url" id="url-input" class="form__input form__input_card_link" placeholder="Ссылка на картинку" autocomplete="off" required>
+                <span class="form__input-error url-input-error"></span>
                 <button class="form__button-save" type="submit">Создать</button>
             </form>
             <button class="popup__button-close" type="button"></button>
@@ -84,5 +88,6 @@
     </template>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 </html>

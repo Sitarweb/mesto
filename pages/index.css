@@ -46,8 +46,13 @@
 /** form **/
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__input/_mean/form__input_mean_job.css);
+@import url(../blocks/form/__input/_card/form__input_card_link.css);
+@import url(../blocks/form/__input/_type/form__input_type_error.css);
 @import url(../blocks/form/__button-save/form__button-save.css);
-
+@import url(../blocks/form/__button-save/_disabled/form__button-save_disabled.css);
+@import url(../blocks/form/__input-error/form__input-error.css);
+@import url(../blocks/form/__input-error/_visible/form__input-error_visible.css);
 
 /** Попап картинки **/
 

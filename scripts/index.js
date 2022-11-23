@@ -89,7 +89,7 @@ const initialCards = [
 cardOpenButton.addEventListener('click', () => {
     openPopup(cardPopup)
     const button = cardPopup.querySelector('.form__button-save');
-    submitButtonState(button);
+    setSubmitButtonState(button);
 });
 
 const cardTemplate = document.querySelector('#elements-template').content;
@@ -160,7 +160,7 @@ function closePopupByOverlay(evt) {
 
 /** Закрытие попапа по оверлею**/
 
-function submitButtonState (button){
+function setSubmitButtonState (button){
     button.setAttribute('disabled', '');
     button.classList.add('form__button-save_disabled');
 }

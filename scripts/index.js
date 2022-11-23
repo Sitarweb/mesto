@@ -3,7 +3,6 @@
 function openPopup (popup){
     popup.classList.add('popup_is-opened');
     document.addEventListener('keydown', closePopupEsc);
-    hideInput();
 }
 
 function closePopup (popup){
@@ -87,10 +86,15 @@ const initialCards = [
     }
 ];
 
-cardOpenButton.addEventListener('click', () => openPopup(cardPopup));
+cardOpenButton.addEventListener('click', () => {
+    openPopup(cardPopup)
+    const button = cardPopup.querySelector('.form__button-save');
+    submitButtonState(button);
+});
 
-function creatingCard (cardInfo) {
-    const cardTemplate = document.querySelector('#elements-template').content;
+const cardTemplate = document.querySelector('#elements-template').content;
+
+function creatNewCard (cardInfo) {
     const cardElements = cardTemplate.querySelector('.elements__card').cloneNode(true);
 
     const cardTitle = cardElements.querySelector('.elements__title');
@@ -115,13 +119,13 @@ function creatingCard (cardInfo) {
     return cardElements;
 }
 
-initialCards.forEach((item) => cardsConteiner.prepend(creatingCard(item)));
+initialCards.forEach((item) => cardsConteiner.prepend(creatNewCard(item)));
 
 function handleCardFormSubmit (evt){
     evt.preventDefault();
     
     const cardValue = {name: cardFormName.value, link: cardFormLink.value};
-    cardsConteiner.prepend(creatingCard(cardValue));
+    cardsConteiner.prepend(creatNewCard(cardValue));
 
     evt.target.reset();
 
@@ -150,20 +154,13 @@ function closePopupEsc(evt){
 
 function closePopupByOverlay(evt) {
     if (evt.target === evt.currentTarget) {
-      const popup = document.querySelector('.popup_is-opened');
-      closePopup(popup);
+      closePopup(evt.target);
     }
   }
 
-  /** Функция отчиски попапа профиля от ошибок при открытии **/
+/** Закрытие попапа по оверлею**/
 
-  function hideInput (){
-    const formError = document.querySelector('#form-error');
-    const inputList = Array.from(formError.querySelectorAll('.form__input'));
-    inputList.forEach((inputElement) => {
-        inputElement.classList.remove('form__input_type_error');
-        const errorElement = document.querySelector(`.${inputElement.id}-error`);
-        errorElement.classList.remove('.form__input-error_visible');
-        errorElement.textContent = '';
-    })
-  }
+function submitButtonState (button){
+    button.setAttribute('disabled', '');
+    button.classList.add('form__button-save_disabled');
+}

@@ -53,6 +53,11 @@ export default class FormValidator{
           }
     }
 
+    setSubmitButtonState(){
+        this._buttonElement.classList.add(this._setting.inactiveButtonClass);
+        this._buttonElement.setAttribute('disabled', '');
+    }
+
     enableValidation() {
         this._toggleButton();
         this._setEventListeners();

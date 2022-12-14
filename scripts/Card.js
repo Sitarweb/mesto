@@ -1,7 +1,7 @@
 export default class Card{
     constructor(data, template, increaseImage){
         this._text = data.name;
-        this._image = data.link;
+        this._imageLink = data.link;
         this._template = template;
         this._increaseImage = increaseImage;
     }
@@ -22,7 +22,7 @@ export default class Card{
         this._likeButton = this._element.querySelector('.elements__heart-button');
         this._removeButton = this._element.querySelector('.elements__urn');
 
-        this._imageElement.src = this._image;
+        this._imageElement.src = this._imageLink;
         this._imageElement.alt = this._text;
         this._nameElement.textContent = this._text;
 
@@ -38,7 +38,7 @@ export default class Card{
     }
 
     _fullImageElement(){
-        this._increaseImage(this._imageElement, this._nameElement);
+        this._increaseImage(this._imageLink, this._text);
     }
 
     _toggleLike(){

@@ -50,7 +50,7 @@ function handleCardFormSubmit (evt){
     cardsConteiner.prepend(createCard(cardValue, '#elements-template', increaseImage));
     evt.target.reset();
 
-    validator[1].setSubmitButtonState();
+    validators['card-form'].setSubmitButtonState();
     closePopup(cardPopup);
 }
 cardCreate.addEventListener('submit', handleCardFormSubmit);
@@ -64,7 +64,9 @@ function increaseImage (imageElement, nameElement){
 }
 
 /** валидация форм **/
+const validators = {}
 formList.forEach((formElement) => {
-    new formValidator(setting, formElement).enableValidation();
-    validator.push(new formValidator(setting, formElement));
+    const validator = new formValidator(setting, formElement);
+    validator.enableValidation();
+    validators[formElement.name] = validator;
 });

@@ -1,4 +1,4 @@
-# Проект 7: Mesto
+# Проект 8: Mesto
 __Опубликован по адресу:__ https://sitarweb.github.io/mesto/
 
 __Репозиторий:__ https://github.com/Sitarweb/mesto

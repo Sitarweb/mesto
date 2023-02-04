@@ -4,6 +4,8 @@ const formList = document.querySelectorAll('.form');
 /** Попап редактирования профиля **/
 const profilePopup = document.querySelector('.popup_info');
 
+const profileInput = profilePopup.querySelectorAll('.form__input');
+
 /** Кнопка открытия попапа редактирования профиля **/
 const profileOpenButton = document.querySelector('.profile__edit-button');
 
@@ -17,4 +19,4 @@ const popupElementImage = document.querySelector('.popup__image');
 const popupElementSubtitle = document.querySelector('.popup__subtitle');
 
 
-export {formList, profilePopup,  profileOpenButton, cardOpenButton, popupElementImage, popupElementSubtitle};
+export {formList, profileInput,  profileOpenButton, cardOpenButton, popupElementImage, popupElementSubtitle};

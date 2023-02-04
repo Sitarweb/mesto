@@ -6,8 +6,8 @@ export default class UserInfo{
     /** Метод создает объект с данными, которые подставляются в форму, при её открытии */
     getUserInfo(){
         return {
-            name: this._userName.textContent,
-            work: this._userWork.textContent
+            'profile-form-nickname': this._userName.textContent,
+            'profile-form-job': this._userWork.textContent
         }
     }
     /** Метод меняет данные о пользователе на странице (или сохраняет) при cабмите формы */

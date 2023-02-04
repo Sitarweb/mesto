@@ -1,4 +1,4 @@
-import './index.css';; 
+import './index.css'; 
 
 import Card from '../components/Card.js';
 import {setting, initialCards, validators} from '../utils/const.js';
@@ -7,7 +7,7 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
-import {formList, profilePopup,  profileOpenButton, cardOpenButton, popupElementImage, popupElementSubtitle} from '../utils/elements.js';
+import {formList, profileInput,  profileOpenButton, cardOpenButton, popupElementImage, popupElementSubtitle} from '../utils/elements.js';
 
 /** Создаём экземпляр класса UserInfo */
 const userInfo = new UserInfo({
@@ -26,15 +26,14 @@ const popupWithProfile = new PopupWithForm(
         }
 
         userInfo.setUserInfo(data);
-        validators['profile-form'].setSubmitButtonState();
         popupWithProfile.close();
     }
 );
 popupWithProfile.setEventListeners();
 
 /** Функция переносит данные со страницы в попап редактирования профиля */
-function setInputValues(popup, data){
-    popup.querySelectorAll('.form__input').forEach((input) => {
+function setInputValues(formInput, data){
+    formInput.forEach((input) => {
         input.value = data[input.name]; /** !!! */
     });
 }
@@ -42,7 +41,7 @@ function setInputValues(popup, data){
 /** Открывается попап редактирования профиля, выполняется функция setInputValues */
 profileOpenButton.addEventListener('click', () => {
     popupWithProfile.open();
-    setInputValues(profilePopup, userInfo.getUserInfo());
+    setInputValues(profileInput, userInfo.getUserInfo());
 })
 
 

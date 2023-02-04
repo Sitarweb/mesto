@@ -9,14 +9,14 @@
 <body class="page">
     <!-- Шапка -->
     <header class="header">
-        <img src="<%=require(images/header__logo.svg)%>" alt="Место" class="header__logo">
+        <img src="<%=require('./images/header__logo.svg')%>" alt="Место" class="header__logo">
     </header>
     <!-- Основной контент -->
     <main class="content">
         <!-- Информация профиля, кнопка редатирования профиля и добавления карточки -->
         <section class="profile">
             <div class="profile__content">
-                <img src="<%=require(images/profile__avatar.svg)%>" alt="Ваше фото" class="profile__avatar">
+                <img src="<%=require('./images/profile__avatar.svg')%>" alt="Ваше фото" class="profile__avatar">
                 <div class="profile__info">
                     <h1 class="profile__info-title">Жак-Ив Кусто</h1>
                     <button class="profile__edit-button" type="button"></button>
@@ -78,7 +78,7 @@
     <template id="elements-template">
         <article class="elements__card">
             <img src="#" alt="" class="elements__image">
-            <img class="elements__urn" alt="Урна" src="<%=require(images/urn.svg)%>">
+            <img class="elements__urn" alt="Урна" src="<%=require('./images/urn.svg')%>">
             <div class="elements__text">
                 <h3 class="elements__title"></h3>
                 <button class="elements__heart-button" type="button"></button>
@@ -86,6 +86,6 @@
         </article>
     </template>
 
-    <script type="module" src="./pages/index.js"></script>
+    
 </body>
 </html>

@@ -1,7 +1,7 @@
 export default class Popup{
     constructor(selector){
         this._popupSelector = selector;
-        this._popup = document.querySelector(selector);
+        this._popup = document.querySelector(this._popupSelector);
         this._handleEscClose = this._handleEscClose.bind(this);
     }
     /** Метод "открывает" нужный попап, также накидывает на esp слушатель, при нажатии на него попап закроется*/

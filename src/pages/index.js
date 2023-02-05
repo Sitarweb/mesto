@@ -7,7 +7,7 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
-import {formList, profileInput,  profileOpenButton, cardOpenButton, popupElementImage, popupElementSubtitle} from '../utils/elements.js';
+import {formList, profileInput,  profileOpenButton, cardOpenButton} from '../utils/elements.js';
 
 /** Создаём экземпляр класса UserInfo */
 const userInfo = new UserInfo({
@@ -34,7 +34,7 @@ popupWithProfile.setEventListeners();
 /** Функция переносит данные со страницы в попап редактирования профиля */
 function setInputValues(formInput, data){
     formInput.forEach((input) => {
-        input.value = data[input.name]; /** !!! */
+        input.value = data[input.name];
     });
 }
 
@@ -42,6 +42,7 @@ function setInputValues(formInput, data){
 profileOpenButton.addEventListener('click', () => {
     popupWithProfile.open();
     setInputValues(profileInput, userInfo.getUserInfo());
+    validators['profile-form'].resetValidation();
 })
 
 
@@ -76,7 +77,6 @@ const popupWithCard = new PopupWithForm(
         }
 
         section.addItem(createCard(data));
-        validators['card-form'].setSubmitButtonState();
         popupWithCard.close();
     }
 );
@@ -85,10 +85,11 @@ popupWithCard.setEventListeners();
 /** Открывается попап создания карточки */
 cardOpenButton.addEventListener('click', () => {
     popupWithCard.open();
+    validators['card-form'].resetValidation();
 }) 
 
 /** Создается экземпляр класса PopupWithImage, также выполняется метод setEventListeners */
-const popupWithImage = new PopupWithImage('.popup_images', popupElementImage, popupElementSubtitle);
+const popupWithImage = new PopupWithImage('.popup_images');
 popupWithImage.setEventListeners();
 
 

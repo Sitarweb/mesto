@@ -57,7 +57,7 @@
 @import url(../blocks/form/__button-save/_disabled/form__button-save_disabled.css);
 @import url(../blocks/form/__input-error/form__input-error.css);
 @import url(../blocks/form/__input-error/_visible/form__input-error_visible.css);
-@import url(../blocks/form/_urn/form_urn.css);
+@import url(../blocks/popup/__form/popup__form.css);
 
 /** Попап картинки **/
 

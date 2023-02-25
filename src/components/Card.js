@@ -4,7 +4,7 @@ export default class Card{
         this._imageLink = data.link;
         this._likes = data.likes;
         this._cardId = data.id;
-        this._ownerId = data.owner._id === this._userInfoId;
+        this._ownerId = data.owner._id === userInfoId;
         this._template = template;
         this._userInfoId = userInfoId;
         this._handleCardClick = handleCardClick;

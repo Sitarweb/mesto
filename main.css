@@ -39,7 +39,7 @@
 .form__button-save_disabled{background-color:#fff;border:1px solid #000;color:#000;cursor:default;opacity:.2;pointer-events:none}
 .form__input-error{color:red;font-size:12px;height:15px;line-height:1.25;min-height:12px;opacity:0;padding-top:5px;transition:opacity .3s}
 .form__input-error_visible{opacity:1}
-.form_urn{display:flex;flex-direction:column;margin:0;width:100%}
+.form_urn{margin:0}
 .popup__content-image{position:relative;z-index:2}
 .popup__figure{display:flex;flex-direction:column;margin:0;padding:0}
 .popup_images{background:rgba(0,0,0,.9)}

@@ -7,6 +7,7 @@ export default class PopupWithForm extends Popup{
 
         this._form = this._popup.querySelector('.form');
         this._inputList = this._form.querySelectorAll('.form__input');
+        this._submitButton = this._form.querySelector('.form__button-save');
     }
     /** Метод собирает данные с полей формы */
     _getInputValues(){
@@ -27,5 +28,15 @@ export default class PopupWithForm extends Popup{
     close(){
         super.close();
         this._form.reset();
+    }
+    /** Метод переносит данные со страницы в попап редактирования профиля или обнавления аватара */
+    setInputValues(data){
+        this._inputList.forEach((input) => {
+            input.value = data[input.name];
+        });
+    }
+    /** Метод меняет текст кнопки при сохранении данных на сервер */
+    setSubmitButtonText(text){
+        this._submitButton.textContent = text;
     }
 }

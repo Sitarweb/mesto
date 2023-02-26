@@ -40,6 +40,10 @@ export default class Card{
             this._removeButton.remove();
         }
 
+        if(this._isLike){
+            this._likeButton.classList.add('elements__heart-button_active');
+        }
+
         this._setEventListeners();
 
         return this._element;

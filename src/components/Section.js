@@ -5,7 +5,7 @@ export default class Section{
     }
     /** Метод отвечает за отрисовку всех элементов */
     renderItems(initialArray){
-        initialArray.forEach((item) => this._renderer(item));
+        initialArray.reverse().forEach((item) => this._renderer(item));
     }
     /** Метод принимает DOM-элемент и добавляет его в контейнер */
     addItem(item){

@@ -49,16 +49,11 @@ const popupWithProfile = new PopupWithForm(
             about: values['profile-form-job']
         }
 
-        popupWithProfile.setSubmitButtonText('Сохранение...');
         /** Происходит запрос на обновление данных о пользователе */
-        api.patchUserInfo(data)
+        return api.patchUserInfo(data)
         /** Если он успешный, то далее происходят изменения на странице, а если нет то в консоль выводиться, что пошло не так */
-        .then(() => {
-            userInfo.setUserInfo(data);
-            popupWithProfile.close();
-        })
-        .catch(err => console.log(err))
-        .finally(() => popupWithProfile.setSubmitButtonText('Сохранить'));
+        .then(() => userInfo.setUserInfo(data))
+        .catch(err => console.log(err));
     }
 );
 popupWithProfile.setEventListeners();
@@ -135,16 +130,11 @@ const popupWithCard = new PopupWithForm(
             link: values["card-form-link"]
         }
 
-        popupWithCard.setSubmitButtonText('Сохранение...');
         /** На сервер добавляется новая карточка */
-        api.postNewCard(data)
+        return api.postNewCard(data)
         /** Если он успешный, то на странице появляется карточка, а если нет то в консоль выводиться, что пошло не так */
-        .then((data) => {
-            section.addItem(createCard(data));
-            popupWithCard.close();
-        })
-        .catch(err => console.log(err))
-        .finally(() => popupWithCard.setSubmitButtonText('Сохранить'));
+        .then((data) => section.addItem(createCard(data)))
+        .catch(err => console.log(err));
         
     }
 );
@@ -168,16 +158,11 @@ const popupWithAvatar = new PopupWithForm(
             link: value["avatar-form-link"]
         }
 
-        popupWithAvatar.setSubmitButtonText('Сохранение...');
         /** Происходит запрос на обновление аватара профиля */
-        api.patchUserAvatar(data)
+        return api.patchUserAvatar(data)
         /** Если он успешный, то аватар профиля обновляется, а если нет то в консоль выводиться, что пошло не так */
-        .then(() => {
-            userInfo.setUserAvatar(data.link);
-            popupWithAvatar.close();
-        })
-        .catch(err => console.log(err))
-        .finally(() => popupWithAvatar.setSubmitButtonText('Сохранить'))
+        .then(() => userInfo.setUserAvatar(data.link))
+        .catch(err => console.log(err));
     }
 );
 popupWithAvatar.setEventListeners();
